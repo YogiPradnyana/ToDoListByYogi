@@ -8,8 +8,12 @@ function add() {
   // 1. mengambil nilai dari input
   let newText = document.getElementById('new_text');
   // 2. menambahkan li baru atau list todo baru
-  let newTodo = '<li><span>' + newText.value + '</span></li>';
+  let newTodo = '<li><span onclick="beriGaris(this)">' + newText.value + '</span></li>';
   todo.insertAdjacentHTML('afterbegin', newTodo);
   // 3. menghapus fieldnya
   newText.value = '';
+}
+
+function beriGaris(el) {
+  el.classList.toggle('done');
 }
